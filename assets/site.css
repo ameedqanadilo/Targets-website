@@ -49,8 +49,8 @@ main>section{padding:var(--sec) 0}
 header{background:var(--ink);color:#fff;position:relative;z-index:12}
 header .wrap{height:var(--head-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;direction:ltr}
-.logo img{width:32px;height:34px}
-.logo span{font-size:26px;color:#fff;letter-spacing:.5px;line-height:1}
+.logo img{width:40px;height:42px}
+.logo span{font-size:30px;color:#fff;letter-spacing:.5px;line-height:1}
 nav.main{display:flex;gap:10px;align-items:center}
 nav.main a.lnk{display:none;color:var(--on-dark);font-size:15px;font-weight:500;padding:8px 2px;border-bottom:2px solid transparent}
 nav.main a.lnk:hover,nav.main a.lnk.on{color:#fff;border-bottom-color:var(--red)}
@@ -64,8 +64,8 @@ nav.lang{display:flex;gap:8px}
  header{position:sticky;top:0}
  nav.main{gap:20px}
  nav.main a.lnk{display:block}
- .logo img{width:36px;height:38px}
- .logo span{font-size:30px}
+ .logo img{width:48px;height:50px}
+ .logo span{font-size:38px}
 }
 
 /* Mobile section links */
@@ -166,6 +166,8 @@ html[dir="ltr"] a:hover>.more::after{transform:translateX(4px) rotate(-135deg)}
 main>section.cta{background:var(--red);color:var(--ink);padding:clamp(52px,7.5vw,104px) 0;position:relative;overflow:hidden;isolation:isolate}
 .cta::before{content:"";position:absolute;z-index:-1;inset-inline-end:-130px;top:-170px;width:440px;height:440px;border-radius:50%;border:58px solid rgba(22,22,22,.07);box-shadow:inset 0 0 0 66px var(--red),inset 0 0 0 124px rgba(22,22,22,.07)}
 .cta .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.cta .cta-mark{width:72px;height:75px;display:block;margin-bottom:4px}
+@media (min-width:940px){.cta .cta-mark{width:104px;height:108px}}
 .cta h2{color:#fff;font-size:clamp(27px,6vw,56px);font-weight:900;max-width:18ch}
 .cta p{font-size:clamp(16.5px,1.5vw,19px);font-weight:500;max-width:50ch;line-height:1.8}
 .cta .btn-red{background:var(--ink);color:#fff}

@@ -195,3 +195,13 @@ main>section.blogteaser{background:var(--white);padding-top:0}
 .results-list blockquote{margin:0;font-size:17px;font-weight:500;line-height:1.9}
 .results-list span{color:var(--muted);font-size:15px}
 @media (min-width:860px){.results-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
+
+/* Full brand mark (four targets + red star) */
+.hero .mark{display:none}
+.why-mark{display:block;width:150px;height:150px;margin-bottom:-6px}
+@media (min-width:940px){
+ .why-mark{width:190px;height:190px}
+ .hero .wrap{position:relative}
+ .hero .mark{display:block;position:absolute;z-index:-1;width:min(620px,48vw);height:auto;inset-inline-end:max(-90px,-6vw);top:50%;transform:translateY(-50%);pointer-events:none}
+ .hero::before{display:none}
+}
