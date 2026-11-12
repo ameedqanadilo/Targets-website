@@ -1,4 +1,5 @@
 /* Service, about and blog index pages: only what differs from site.css */
 .phero+.services{padding-top:clamp(56px,7vw,104px)}
-.services#fit{background:var(--paper)}
+.services#fit{background:var(--white)}
+.services#fit .card{background:var(--soft)}
 .ready a bdi{font-weight:700}

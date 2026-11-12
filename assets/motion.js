@@ -90,3 +90,7 @@
 
 /* Mobile section links: bring the current page's link into view */
 document.addEventListener('DOMContentLoaded',function(){var a=document.querySelector('.mnav a[aria-current="page"]');if(a&&a.parentNode.scrollWidth>a.parentNode.clientWidth){a.parentNode.scrollLeft+=a.getBoundingClientRect().left-a.parentNode.getBoundingClientRect().left-16;}});
+
+/* Floating WhatsApp button: step aside while a section with its own WhatsApp buttons is on screen
+   (the page hero and the closing band), so it never covers them. Without JS it simply stays visible. */
+document.addEventListener('DOMContentLoaded',function(){var f=document.querySelector('.wa-fab');if(!f||!('IntersectionObserver' in window))return;var on=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)on.add(e.target);else on.delete(e.target);});f.classList.toggle('is-away',on.size>0);});document.querySelectorAll('.hero,.phero,.post-head,main>section.cta,.post-cta').forEach(function(el){io.observe(el);});});
