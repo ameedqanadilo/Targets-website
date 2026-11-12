@@ -12,20 +12,22 @@ The static landing page for **targetsagency.com**. There is no build step, no de
 | `blog/` | Arabic blog: index and three articles (`meta-ads-cost`, `views-no-messages`, `store-or-instagram`), styled by `assets/blog.css`. Arabic only, so no hreflang alternates. |
 | `about/`, `en/about/` | About and contact page (WhatsApp, email, how we work). |
 | `privacy/index.html` | Bilingual privacy policy. |
-| `assets/*.css` | Shared site/accessibility styles and home, services, and privacy styles. |
+| `assets/*.css` | `site.css` holds the design tokens (brand red, wine, blush, paper) and every shared component: header, mobile links, buttons, inner-page hero, cards, checklist, process, FAQ, WhatsApp strip (`.band`), closing call to action, footer. `home.css` holds the homepage sections (red hero with the WhatsApp message preview, the four-target path, services, free-review offer, why us, sectors, blog list, and a ready but unused `.results` block). `services.css`, `blog.css`, `privacy.css` and `accessibility.css` hold the rest. |
 | Site-wide extras | Mobile section links under the header (`.mnav`) and a floating WhatsApp button (`.wa-fab`) on every page except privacy. The homepage also has trust points, a free-review offer and an FAQ with FAQPage JSON-LD. |
-| `assets/motion.css`, `assets/motion.js` | Calm motion: hero light rays, hero title words fading in from a soft blur, staggered reveal of sections and cards, the 10+ number counting up, a gently floating hero mark, and smooth wheel scrolling on desktop (Lenis, loaded from jsDelivr only when motion is allowed; without it the page scrolls natively). No build step; all of it is off under `prefers-reduced-motion`. |
-| `assets/icon.svg` | Logo mark, also used as the favicon. |
-| `assets/arch.svg` | Hero illustration. |
+| `assets/motion.css`, `assets/motion.js` | Calm motion: hero title words fading in from a soft blur, the hero chat messages arriving one after another (CSS only), the click-to-sale path drawing itself once when scrolled into view, the 10+ number counting up, and smooth wheel scrolling on desktop (Lenis, loaded from jsDelivr only when motion is allowed; without it the page scrolls natively). No build step; the page is complete without JavaScript and all motion is off under `prefers-reduced-motion`. |
+| `assets/icon.svg` | Logo mark in brand red `#FF4343`, also used as the favicon. |
+| `assets/icon-white.svg` | The same mark in white, used inside the red "sale" target on the homepage path. |
 | `assets/og.png` | 1200×630 social share preview image. |
 | `sitemap.xml`, `robots.txt` | Seven canonical page URLs and crawler discovery. |
 | `scripts/audit.py` | Optional Python standard-library checks; not needed for deployment. |
 | `CNAME` | The custom domain for GitHub Pages. |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are. |
 
-Fonts load from Google Fonts: Alexandria and Nunito Sans, with the existing weights and `display=swap`. The font stylesheet loads without blocking rendering and has a `<noscript>` fallback. Privacy also uses regular Nunito Sans for its English section.
+Fonts load from Google Fonts with `display=swap`: Beiruti (headings, Arabic and Latin), IBM Plex Sans Arabic (body text, Arabic and Latin) and Nunito Sans italic 900 (the TARGETS wordmark only). The font stylesheet loads without blocking rendering and has a `<noscript>` fallback.
 
-Page artwork stays in lightweight SVG (no raster conversion required). The social preview stays in PNG for sharing compatibility and is losslessly compressed. Only footer logos are lazy-loaded; homepage hero artwork loads eagerly with high priority.
+Page artwork is CSS and lightweight SVG (the target rings are drawn in CSS). The social preview stays in PNG for sharing compatibility and is losslessly compressed. Only footer logos are lazy-loaded.
+
+The homepage has a commented-out results/testimonials section. Fill it only with real numbers or quotes the client has approved; never with placeholder or invented content. The hero chat card shows the exact prefilled WhatsApp message, so if the homepage WhatsApp text changes, change the bubble text with it.
 
 ## Deploy option A: GitHub Pages
 

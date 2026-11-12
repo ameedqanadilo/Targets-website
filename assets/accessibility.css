@@ -1,9 +1,9 @@
-/* Shared accessibility and resilient layout; brand artwork stays unchanged. */
+/* Shared accessibility and resilient layout. */
 body{overflow-wrap:break-word}
 .wrap>*{min-width:0}
-:where(a,summary):focus-visible{outline:3px solid var(--ink);outline-offset:4px;box-shadow:0 0 0 7px #fff}
-[id]{scroll-margin-top:160px}
-.skip-link{position:fixed;inset-inline-start:16px;top:12px;z-index:100;background:#fff;color:#161616;padding:12px 18px;border-radius:8px;font-weight:700;transform:translateY(-200%)}
+:where(a,summary,button):focus-visible{outline:3px solid var(--wine,#2B0A10);outline-offset:3px;box-shadow:0 0 0 6px #fff;border-radius:6px}
+[id]{scroll-margin-top:110px}
+.skip-link{position:fixed;inset-inline-start:16px;top:12px;z-index:100;background:#fff;color:#2B0A10;padding:12px 18px;border-radius:8px;font-weight:700;transform:translateY(-200%)}
 .skip-link:focus{transform:translateY(0)}
 @media (prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
