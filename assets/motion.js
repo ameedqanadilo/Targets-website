@@ -78,10 +78,41 @@
     document.head.appendChild(sc);
   }
 
+  /* 5. The auto-reply example plays itself like a short clip while it is on screen, then loops.
+     Without JS, or with reduced motion, the whole conversation is simply shown. */
+  function demo() {
+    var el = document.querySelector('.demo');
+    if (!el || !('IntersectionObserver' in window)) return;
+    var parts = el.querySelectorAll('.dm, .demo-alert'), timers = [], playing = false;
+    if (parts.length < 4) return;
+    el.classList.add('mv-demo');
+    function at(ms, fn) { timers.push(setTimeout(fn, ms)); }
+    function reset() {
+      timers.forEach(clearTimeout); timers = [];
+      parts.forEach(function (p) { p.classList.remove('is-on', 'is-typing'); });
+    }
+    function play() {
+      reset();
+      at(500, function () { parts[0].classList.add('is-on'); });
+      at(1500, function () { parts[1].classList.add('is-on', 'is-typing'); });
+      at(2900, function () { parts[1].classList.remove('is-typing'); });
+      at(4700, function () { parts[2].classList.add('is-on'); });
+      at(5900, function () { parts[3].classList.add('is-on'); });
+      at(10500, function () { parts.forEach(function (p) { p.classList.remove('is-on'); }); });
+      at(11300, play);
+    }
+    new IntersectionObserver(function (es) {
+      var vis = es[0].isIntersecting;
+      if (vis && !playing) { playing = true; play(); }
+      else if (!vis && playing) { playing = false; reset(); }
+    }, { threshold: 0.35 }).observe(el);
+  }
+
   function start() {
     blurTitle();
     path();
     countUp();
+    demo();
     smooth();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
