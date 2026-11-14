@@ -205,3 +205,41 @@ main>section.blogteaser{background:var(--white);padding-top:0}
  .hero .mark{display:block;position:absolute;z-index:-1;width:min(620px,48vw);height:auto;inset-inline-end:max(-90px,-6vw);top:50%;transform:translateY(-50%);pointer-events:none}
  .hero::before{display:none}
 }
+
+/* Mobile calm layer (below 940px): desktop is unchanged */
+@media (max-width:939px){
+ .hero::before,.svc-card.lead::before,.demo::before,.offer-box::before{display:none}
+ main>section.hero{padding:20px 0 40px}
+ .hero h1{font-size:clamp(27px,8vw,34px);line-height:1.4}
+ .hero .lead{font-size:15.5px}
+ .chat{box-shadow:none}
+ /* light lead service card instead of a black block */
+ .svc-card.lead{background:var(--white);color:var(--ink);padding:24px 22px}
+ .svc-card.lead h3{font-size:22px;font-weight:800}
+ .svc-card.lead p{color:var(--muted);font-size:15.5px}
+ .svc-card.lead .more{color:var(--deep)}
+ .tags li{border-color:var(--light);font-size:13px}
+ .svcs .band{background:var(--white)}
+ /* the free-review offer becomes a soft panel */
+ main>section.offer{padding-top:var(--sec)}
+ .offer-box{background:var(--soft);color:var(--ink);padding:26px 20px}
+ .otxt p{color:var(--muted)}
+ .otxt h2{font-size:clamp(23px,6.4vw,30px)}
+ .oget{padding:4px 0 0;background:transparent}
+ /* secondary actions are outlined, so only the main ones are solid red */
+ .auto .btn-red,.why-head .btn-red{background:transparent;color:var(--ink);border-color:var(--ink)}
+ /* softer process path */
+ .targets li{grid-template-columns:40px 1fr;column-gap:14px;padding-bottom:20px}
+ .ring{width:40px;height:40px;border-width:4px;border-color:var(--mid);box-shadow:inset 0 0 0 5px var(--white),inset 0 0 0 10px var(--mid)}
+ .targets .win .ring{background-size:18px}
+ .targets li::before{inset-inline-start:19px;top:46px;background:repeating-linear-gradient(var(--light) 0 6px,transparent 6px 12px)}
+ .targets b{font-size:17.5px}
+ .targets b::before{font-size:13px}
+ .exp .big{font-size:52px}
+ .why-mark{width:110px;height:110px}
+ .why-list h3{font-size:17.5px}
+ /* sectors: one swipeable row instead of a wall of chips */
+ .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1*var(--pad));padding-inline:var(--pad);padding-bottom:4px}
+ .chips::-webkit-scrollbar{display:none}
+ .chips li{flex:0 0 auto;font-size:14px;padding:6px 14px}
+}
