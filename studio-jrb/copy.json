@@ -1,0 +1,44 @@
+{
+ "JRB-ASK": {
+  "ar": {
+   "message": "رد آلي على واتساب: عميلك يسأل نفس السؤال كل يوم؟ الرد الآلي يجاوبه خلال ثواني: السعر، التوصيل، والطلب.\nلا تصدقنا، جرّبه بنفسك: أرسل لنا كلمة «جرّب» وشوف كيف يرد 👇\nوعندك أسبوع تجربة مجانية على صفحتك.",
+   "title": "جرّب الرد الآلي بنفسك",
+   "desc": "أسبوع تجربة مجانية",
+   "prefill": "جرّب"
+  },
+  "en": {
+   "message": "WhatsApp auto-reply: customers ask the same question every day? It answers in seconds: prices, delivery and orders.\nDon’t take our word for it: text us “TRY” and see how it replies 👇\nPlus a 1-week free trial on your page.",
+   "title": "Try the auto-reply yourself",
+   "desc": "1-week free trial",
+   "prefill": "TRY"
+  }
+ },
+ "JRB-5H": {
+  "ar": {
+   "message": "رد آلي على واتساب: رديت بعد 5 ساعات؟ ممكن العميل يكون راح لغيرك.\nالرد الآلي يرد خلال ثواني، يعطي السعر ويأخذ الطلب حتى وأنت مشغول.\nأرسل لنا كلمة «جرّب» وجرّبه بنفسك 👇 أسبوع تجربة مجانية.",
+   "title": "رد خلال ثواني بدل ساعات",
+   "desc": "جرّب الرد الآلي بنفسك",
+   "prefill": "جرّب"
+  },
+  "en": {
+   "message": "WhatsApp auto-reply: replied 5 hours later? The customer may have bought elsewhere.\nAuto-reply answers in seconds, gives the price and takes the order, even when you’re busy.\nText us “TRY” and test it yourself 👇 1-week free trial.",
+   "title": "Seconds, not hours",
+   "desc": "Try the auto-reply yourself",
+   "prefill": "TRY"
+  }
+ },
+ "JRB-AUDIT": {
+  "ar": {
+   "message": "تحليل سريع ومجاني لصفحتك: صفحتك فيها متابعين بس ما فيه رسائل؟ نفحص البايو، المنشورات، وطريقة الرد على العملاء.\nأرسل لنا كلمة «جرّب» مع رابط صفحتك 👇\nوإذا حبيت، جرّب الرد الآلي على صفحتك أسبوع مجاناً.",
+   "title": "تحليل مجاني لصفحتك",
+   "desc": "وتجربة رد آلي أسبوع مجاناً",
+   "prefill": "جرّب"
+  },
+  "en": {
+   "message": "Quick free check of your page: followers but no messages? We look at your bio, posts and how you answer customers.\nText us “TRY” with your page link 👇\nIf you like, try the auto-reply on your page free for 1 week.",
+   "title": "Free check of your page",
+   "desc": "Plus a 1-week auto-reply trial",
+   "prefill": "TRY"
+  }
+ }
+}
