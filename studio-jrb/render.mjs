@@ -5,6 +5,7 @@ const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',arg
 const page=await browser.newPage({viewport:{width:1080,height:1920}});
 await page.goto('file:///home/claude/reels/engine.html');
 await page.addScriptTag({path:'/home/claude/reels/reels.js'});
+await page.addScriptTag({path:'/home/claude/reels/reels2.js'});
 const dur=await page.evaluate(([n,l])=>{const c=getReel(n,l);build(c);return c.dur},[name,lang]);
 await page.evaluate(()=>document.fonts.ready);
 if(stillsArg){ for(const t of stillsArg.split(',')){await page.evaluate(x=>render(x),+t);await page.screenshot({path:`${out}_${t}.jpg`,type:'jpeg',quality:85});} await browser.close(); process.exit(0);}
