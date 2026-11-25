@@ -10,6 +10,6 @@ const dur=await page.evaluate(([n,l])=>{const c=getReel(n,l);build(c);return c.d
 await page.evaluate(()=>document.fonts.ready);
 if(stillsArg){ for(const t of stillsArg.split(',')){await page.evaluate(x=>render(x),+t);await page.screenshot({path:`${out}_${t}.jpg`,type:'jpeg',quality:85});} await browser.close(); process.exit(0);}
 const ff=spawn('ffmpeg',['-v','error','-y','-f','image2pipe','-framerate',String(fps),'-i','-','-c:v','libx264','-preset','veryfast','-crf','20','-pix_fmt','yuv420p','-r',String(fps),out],{stdio:['pipe','inherit','inherit']});
-const n=Math.round(dur*fps);
-for(let i=0;i<n;i++){await page.evaluate(x=>render(x),i/fps);const buf=await page.screenshot({type:'jpeg',quality:90});if(!ff.stdin.write(buf))await new Promise(r=>ff.stdin.once('drain',r));}
+const OFF=+(process.env.OFFSET||0.9);const n=Math.round((dur-OFF)*fps);
+for(let i=0;i<n;i++){await page.evaluate(x=>render(x),OFF+i/fps);const buf=await page.screenshot({type:'jpeg',quality:90});if(!ff.stdin.write(buf))await new Promise(r=>ff.stdin.once('drain',r));}
 ff.stdin.end(); await new Promise(r=>ff.on('close',r)); await browser.close(); console.log('ok',out,n,'frames');

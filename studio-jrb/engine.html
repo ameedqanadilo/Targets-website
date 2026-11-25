@@ -103,7 +103,7 @@ function build(cfg){
 function render(t){
   let showBadge=true;
   SCENES.forEach(sc=>{
-    const fin=ease((t-sc.s)/0.25), fout=1-ease((t-(sc.e-0.2))/0.2);
+    const fin=sc.s===0?1:ease((t-sc.s)/0.25), fout=1-ease((t-(sc.e-0.2))/0.2);
     const op=t<sc.s||t>sc.e?0:Math.min(fin,fout);
     sc.d.style.opacity=op;sc.d.style.display=op>0?'block':'none';
     if(op>0.5&&sc.light)showBadge=false;
